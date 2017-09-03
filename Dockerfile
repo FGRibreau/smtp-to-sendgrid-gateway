@@ -1,4 +1,4 @@
-node:8-stretch
+FROM node:8
 
 EXPOSE 25
 
