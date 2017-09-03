@@ -46,6 +46,7 @@ new SMTPServer({
     stream.on('end', function() {
       // obtain commands and lines of text from the data block
       let from,
+        replyTo,
         to = [],
         cc = [],
         bcc = [],
@@ -87,6 +88,10 @@ new SMTPServer({
               bcc = parseAddresses(a_line[1]);
               isCmd = true;
               break;
+            case 'reply-to':
+              replyTo = parseAddresses(a_line[1]);
+              isCmd = true;
+              break;
             case 'mime-version':
             case 'content-transfer-encoding':
               // commands to ignore
@@ -116,7 +121,7 @@ new SMTPServer({
       // format the mail to SendGrid
       const mail = {
         from: from,
-        replyTo: from,
+        replyTo: replyTo || from,
         to: to,
         cc: cc,
         bcc: bcc,
