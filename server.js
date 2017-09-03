@@ -132,16 +132,19 @@ new SMTPServer({
       sgMail
         .send(mail)
         .then(() => {
-          logger.info('forwarded', mail);
+          logger.info('forwarded', JSON.stringify(mail));
           callback();
         })
         .catch(err => {
-          const { message, code, response } = error;
+          const { message, code, response } = err;
 
-          logger.error('failed forwarding', {
-            error: { message, code, response },
-            mail: mail,
-          });
+          logger.error(
+            'failed forwarding',
+            JSON.stringify({
+              error: { message, code, response },
+              mail: mail,
+            })
+          );
 
           callback();
         });
