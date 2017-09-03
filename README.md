@@ -22,7 +22,7 @@ Here we are.
 
 ## Run
 
-Since this server should run as a sidekick of the main application (thus on the same machine) authorization was not required.
+Since this server should run as *a sidekick of the main application* (thus on the same machine or [the same pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#understanding-pods)) authorization was not required.
 
 ```shell
 docker run -it -p 25:25 -e SENDGRID_API=XXXXXXX fgribreau/smtp-to-sendgrid-gateway
@@ -34,11 +34,8 @@ docker run -it -p 25:25 -e SENDGRID_API=XXXXXXX fgribreau/smtp-to-sendgrid-gatew
 - `SMTP_PORT` (optional) Port to listen (default: 25)
 
 
-# Todo
-
-- [ ] Handle authentication
-
-
 ## Credits
 
-- smtp-to-sendgrid-gateway is based on [smtpforward](https://github.com/plasne/smtpforward) by [Peter Lasne](https://github.com/plasne).
+- [SMTP server](https://nodemailer.com/extras/smtp-server/)
+- [mailparser](https://nodemailer.com/extras/mailparser/)
+- [@sendgrid/mail](https://www.npmjs.com/package/@sendgrid/mail)
