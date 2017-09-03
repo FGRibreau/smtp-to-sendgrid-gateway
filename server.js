@@ -94,6 +94,7 @@ new SMTPServer({
               break;
             case 'mime-version':
             case 'content-transfer-encoding':
+            case 'message-id':
               // commands to ignore
               isCmd = true;
               break;
