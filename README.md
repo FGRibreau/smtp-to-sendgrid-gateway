@@ -37,7 +37,6 @@ docker run -it -p 25:25 -e SENDGRID_API=XXXXXXX fgribreau/smtp-to-sendgrid-gatew
 # Todo
 
 - [ ] Handle authentication
-- [ ] Acceptance test
 
 
 ## Credits
