@@ -8,3 +8,5 @@ ADD server.js /usr/src/app
 ADD utils.js /usr/src/app
 
 RUN npm install
+
+CMD ["npm","start"]
