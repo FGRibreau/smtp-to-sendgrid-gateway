@@ -49,8 +49,8 @@ const toSendGridEmail = session => email => {
   }
 
   if (session.envelope.rcptTo) {
-    mail.to = mail.to.concat(
-      session.envelope.rcptTo.map(({ address }) => makeAddress(address))
+    mail.to = session.envelope.rcptTo.map(({ address }) =>
+      makeAddress(address)
     );
   }
 
