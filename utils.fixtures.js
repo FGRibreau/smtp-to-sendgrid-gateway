@@ -90,10 +90,7 @@ Content-Transfer-Encoding: quoted-printable
       '<p>Dear Sir</p>\n<p>Good evening.</p>\n<p></p><br/>\n<p>The footer</p>\n',
     content: [],
     from: { name: 'hello@killbug.today', email: 'hello@killbug.today' },
-    to: [
-      { name: 'plop@example.com', email: 'plop@example.com' },
-      { name: 'fg@killbug.today', email: 'fg@killbug.today' },
-    ],
+    to: [{ name: 'fg@killbug.today', email: 'fg@killbug.today' }],
     bcc: [{ name: 'Heheh eheheh', email: 'plop2@example.com' }],
   },
 };
