@@ -1,6 +1,6 @@
 {
   "name": "smtp-to-sendgrid-gateway",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Forward emails from SMTP requests to the Sendgrid API. Useful when the cloud provider does not allow outbound connections on ports 25, 465, 587.",
   "main": "server.js",
   "scripts": {
