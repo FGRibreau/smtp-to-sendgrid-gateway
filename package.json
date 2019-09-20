@@ -28,7 +28,7 @@
     "debug": "^2.6.8",
     "mailparser": "^2.0.5",
     "smtp-server": "^3.1.0",
-    "winston": "^2.3.1"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "jest": "^20.0.4"
