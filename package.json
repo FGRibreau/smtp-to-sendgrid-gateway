@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FGRibreau/smtp-to-sendgrid-gateway.git"
+    "url": "git+https://github.com/gardner/smtp-to-sendgrid-gateway.git"
   },
   "keywords": [
     "sendgrid",
@@ -18,9 +18,9 @@
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FGRibreau/smtp-to-sendgrid-gateway/issues"
+    "url": "https://github.com/gardner/smtp-to-sendgrid-gateway/issues"
   },
-  "homepage": "https://github.com/FGRibreau/smtp-to-sendgrid-gateway#readme",
+  "homepage": "https://github.com/gardner/smtp-to-sendgrid-gateway#readme",
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",
     "chai": "^4.2.0",

@@ -1,16 +1,13 @@
-FROM node:12
+FROM node:10
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm ci --only=production
+
+COPY . .
 
 EXPOSE 25
-
-
-ADD package.json /app/
-ADD package-lock.json /app/
-ADD config.js /app/
-ADD utils.js /app/
-ADD server.js /app/
-
-WORKDIR /app/
-
-RUN npm install
 
 CMD ["npm", "--silent", "start"]
