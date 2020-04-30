@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/FGRibreau/smtp-to-sendgrid-gateway#readme",
   "dependencies": {
-    "@sendgrid/mail": "^6.1.2",
+    "@sendgrid/mail": "^7.1.0",
     "chai": "^4.1.0",
     "common-env": "^6.1.0",
     "debug": "^2.6.8",
