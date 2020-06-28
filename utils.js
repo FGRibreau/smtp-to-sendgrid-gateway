@@ -14,7 +14,7 @@ const makeAddress = (address, name) => ({
 
 function formatAddresses(addressObject) {
   return addressObject.value.map(({ address, name }) =>
-    makeAddress(address, name)
+      makeAddress(address, name)
   );
 }
 
@@ -25,6 +25,7 @@ const toSendGridEmail = session => email => {
     subject: email.subject,
     text: email.text ? email.text : undefined,
     html: email.html ? email.html : undefined,
+    attachments: [],
     content: [],
     from: {},
     to: [],
@@ -35,6 +36,16 @@ const toSendGridEmail = session => email => {
       mail[part] = formatAddresses(email[part]);
     }
   });
+
+  if (email.attachments.length > 0) {
+    email.attachments.forEach(function (inAttachment) {
+      let outAttachment = {};
+      outAttachment.type = 'attachment';
+      outAttachment.content = inAttachment.content.toString('base64');
+      outAttachment.filename = inAttachment.filename;
+      mail.attachments.push(outAttachment);
+    })
+  }
 
   if (email['reply-to']) {
     mail.replyTo = formatAddresses(email['reply-to'])[0];
@@ -50,7 +61,7 @@ const toSendGridEmail = session => email => {
 
   if (session.envelope.rcptTo) {
     mail.to = session.envelope.rcptTo.map(({ address }) =>
-      makeAddress(address)
+        makeAddress(address)
     );
   }
 
@@ -58,7 +69,7 @@ const toSendGridEmail = session => email => {
 };
 
 const bufferToSendGridEmail = (buffer, session) =>
-  parse(buffer).then(toSendGridEmail(session));
+    parse(buffer).then(toSendGridEmail(session));
 
 // parse -> toSendGridEmail
 module.exports = {
