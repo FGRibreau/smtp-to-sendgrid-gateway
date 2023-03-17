@@ -44,7 +44,7 @@ const toSendGridEmail = session => email => {
     mail.from = formatAddresses(email.from)[0];
   }
 
-  if (session.envelope.mailFrom && session.envelope.mailFrom.address) {
+  if (mail.from.name === '' && session.envelope.mailFrom && session.envelope.mailFrom.address) {
     mail.from = makeAddress(session.envelope.mailFrom.address);
   }
 
