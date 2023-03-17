@@ -48,6 +48,8 @@ const toSendGridEmail = session => email => {
     mail.from = makeAddress(session.envelope.mailFrom.address);
   }
 
+  if (process.env.SENDGRID_FROM_NAME) mail.from.name = process.env.SENDGRID_FROM_NAME;
+
   if (session.envelope.rcptTo) {
     mail.to = session.envelope.rcptTo.map(({ address }) =>
       makeAddress(address)
