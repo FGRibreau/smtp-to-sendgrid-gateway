@@ -44,9 +44,11 @@ const toSendGridEmail = session => email => {
     mail.from = formatAddresses(email.from)[0];
   }
 
-  if (session.envelope.mailFrom && session.envelope.mailFrom.address) {
+  if (mail.from.name === '' && session.envelope.mailFrom && session.envelope.mailFrom.address) {
     mail.from = makeAddress(session.envelope.mailFrom.address);
   }
+
+  if (process.env.SENDGRID_FROM_NAME) mail.from.name = process.env.SENDGRID_FROM_NAME;
 
   if (session.envelope.rcptTo) {
     mail.to = session.envelope.rcptTo.map(({ address }) =>
